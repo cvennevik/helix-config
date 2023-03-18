@@ -1,0 +1,62 @@
+theme = "monokai"
+
+[editor]
+shell=["nu", "-c"]
+auto-save = true
+
+[keys.normal]
+"X" = "extend_line_above"
+"+" = "rotate_selections_backward"
+"#" = "toggle_comments"
+"\\" = "rotate_selections_forward"
+"tab" = "indent"
+"S-tab" = "unindent"
+"A-+" = "rotate_selection_contents_backward"
+"A-\\" = "rotate_selection_contents_forward"
+"C-c" = "no_op"
+"C-s" = ["save_selection", ":w"]
+
+[keys.normal."("]
+d = "goto_prev_diag"
+D = "goto_first_diag"
+f = "goto_prev_function"
+t = "goto_prev_class"
+a = "goto_prev_parameter"
+c = "goto_prev_comment"
+T = "goto_prev_test"
+p = "goto_prev_paragraph"
+g = "goto_prev_change"
+G = "goto_first_change"
+" " = "add_newline_above"
+
+[keys.normal.")"]
+d = "goto_next_diag"
+D = "goto_last_diag"
+f = "goto_next_function"
+t = "goto_next_class"
+a = "goto_next_parameter"
+c = "goto_next_comment"
+T = "goto_next_test"
+p = "goto_next_paragraph"
+g = "goto_next_change"
+G = "goto_last_change"
+" " = "add_newline_below"
+
+[keys.normal.ret]
+c.i = ":open .ignore"
+c.l = ":open ~/AppData/Roaming/helix/languages.toml"
+c.o = ":config-open"
+c.r = ":config-reload"
+e.s = ":sh exercism submit"
+t = ":sh do --ignore-errors { cargo test -q }"
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+"C-c" = "normal_mode"
